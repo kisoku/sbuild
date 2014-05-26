@@ -25,7 +25,6 @@ packages = %w{
   cdbs
   quilt
   dpatch
-  ruby-pkg-tools
   debootstrap
   debconf-utils
   debconf-doc
