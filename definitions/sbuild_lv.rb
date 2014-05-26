@@ -78,7 +78,7 @@ define :sbuild_lv, :distro => nil, :vg => "buildvg", :release => "unstable" do
     variables(
       :vg => vg,
       :distro => params[:distro],
-      :release => params[:name],
+      :release => params[:release],
       :chroot_path => chroot_path,
       :chroot_name => chroot_name,
       :chroot_lv => chroot_lv,
