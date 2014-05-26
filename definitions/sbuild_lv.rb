@@ -23,6 +23,7 @@ define :sbuild_lv, :distro => nil, :vg => "buildvg", :release => "unstable" do
   include_recipe "lvm"
   include_recipe "xfs"
 
+  params[:cookbook] ||= "sbuild"
   params[:distro] ||= node[:platform]
   vg = params[:vg]
   chroot_lv = "#{params[:name]}_chroot"
@@ -58,6 +59,7 @@ define :sbuild_lv, :distro => nil, :vg => "buildvg", :release => "unstable" do
     group "sbuild"
     mode 0640
     backup false
+    cookbook params[:cookbook]
     variables(
       :vg => vg,
       :chroot_name => chroot_name,
@@ -72,6 +74,7 @@ define :sbuild_lv, :distro => nil, :vg => "buildvg", :release => "unstable" do
     group "sbuild"
     mode 0750
     backup false
+    cookbook params[:cookbook]
     variables(
       :vg => vg,
       :distro => params[:distro],
